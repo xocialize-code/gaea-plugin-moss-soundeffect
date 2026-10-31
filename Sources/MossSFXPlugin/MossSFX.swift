@@ -139,12 +139,12 @@ let generateOffer = PluginManifest.Offer(
         "memory_class": "large", "speed_class": "slow", "quality_tiers": ["draft", "standard", "best"],
         "notes": "Sound effects from a description: foley, ambience, creatures, actions, machines and weather, 0.5 to 30 s at 48 kHz. Describe the sound, not a scene (\"heavy rain on a tin roof, distant thunder\"). Write in English or Chinese. A negative prompt steers away from what you name.",
         "supports": ["languages": ["en", "zh"], "sample_rate": .int(Int64(sampleRate)), "channels": 1],
-        "limits": ["max_duration_s": .double(maxSeconds), "min_duration_s": .double(minSeconds), "max_count": .int(Int64(maxCount)),
-                   "max_text_chars": .int(Int64(maxPromptChars))],
+        // Audio §4.2 has no prompt-length limit for generate: the worker refuses a prompt over maxPromptChars itself.
+        "limits": ["max_duration_s": .double(maxSeconds), "min_duration_s": .double(minSeconds), "max_count": .int(Int64(maxCount))],
     ])
 
 public let mossSFXPlugin = GaeaPluginDefinition(
-    id: "com.xocialize.gaea.moss-soundeffect", version: "0.1.0", minGaea: "0.9.2", team: "CFZS6RXUCP",
+    id: "com.xocialize.gaea.moss-soundeffect", version: "0.1.1", minGaea: "0.9.2", team: "CFZS6RXUCP",
     repo: "https://github.com/xocialize-code/gaea-plugin-moss-soundeffect", title: "MOSS-SoundEffect",
     summary: "MOSS-SoundEffect v2.0: sound effects from a description (MES audio.generate): foley, ambience, creatures and actions, 0.5 to 30 s at 48 kHz, exact to the frame.",
     license: "Apache-2.0", executable: "gaea-moss-soundeffect-worker",
