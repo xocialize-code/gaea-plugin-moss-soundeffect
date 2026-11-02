@@ -144,7 +144,7 @@ let generateOffer = PluginManifest.Offer(
     ])
 
 public let mossSFXPlugin = GaeaPluginDefinition(
-    id: "com.xocialize.gaea.moss-soundeffect", version: "0.1.1", minGaea: "0.9.2", team: "CFZS6RXUCP",
+    id: "com.xocialize.gaea.moss-soundeffect", version: "0.1.2", minGaea: "0.9.2", team: "CFZS6RXUCP",
     repo: "https://github.com/xocialize-code/gaea-plugin-moss-soundeffect", title: "MOSS-SoundEffect",
     summary: "MOSS-SoundEffect v2.0: sound effects from a description (MES audio.generate): foley, ambience, creatures and actions, 0.5 to 30 s at 48 kHz, exact to the frame.",
     license: "Apache-2.0", executable: "gaea-moss-soundeffect-worker",
